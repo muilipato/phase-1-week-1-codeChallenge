@@ -1,0 +1,14 @@
+h1{
+    padding: 10px;
+    margin: 1%;
+    background-color: aqua;
+    font-size: 100px;
+    border-radius: 2%;
+
+}
+.mark{
+    align-content: center;
+}
+input {
+    padding: 5px;
+}
