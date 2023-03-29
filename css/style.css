@@ -1,9 +1,14 @@
+body{
+    background-color: aliceblue;
+}
 h1{
     padding: 10px;
     margin: 1%;
     background-color: aqua;
-    font-size: 100px;
-    border-radius: 2%;
+    font-size: 50px;
+    border: 10px;
+    border-color: black;
+    border-collapse: collapse;
 
 }
 .mark{

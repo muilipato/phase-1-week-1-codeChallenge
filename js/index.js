@@ -15,8 +15,12 @@ const calculateGrade = ()=>{
     else if(myvalue >39 && myvalue<=49){
         myGrade="Your grade is: D";
     }
-    else if(myvalue < 40) {
+    else if(myvalue < 40 && myvalue>0) {
         myGrade ="Your grade is: E";
+    }
+    if (myvalue<0 || myvalue>100)
+    {
+        myGrade="Please enter a number between 0-100";
     }
      myAnswer.innerHTML = myGrade;
 }
@@ -49,3 +53,47 @@ const getPenalty = ()=>{
     }
     response.innerHTML= penalty;
 }
+
+const netSalary =()=>{
+    let mySalary = document.getElementById('salary').value;
+    let myOutput= document.getElementById('netsal');
+    let myNhif = document.getElementById('nhif');
+    let myPayee =document.getElementById('payee');
+    let myDeductions = document.getElementById('deduc');
+    let afterTax;
+    let tax;
+    let nhif;
+    let deduc;
+    let relief;
+    let payee;
+    function allDeductions(){
+        afterTax=`Your net salary is KES ${mySalary-tax}`;
+        nhif =`Your relief is: ${600}`;
+        deduc =`Deductions: ${2500}`;
+        relief =`Relief:${2400}`;
+        payee=`tax: ${tax}`;
+
+
+    }
+    if(mySalary<24001){
+        tax = mySalary*0.1;
+      allDeductions();
+
+    }
+    else if(mySalary>24000 && mySalary<32334){
+        tax=mySalary*0.25;
+        allDeductions();
+       
+    }
+    else if(mySalary>32333){
+        tax=mySalary*0.3;
+        allDeductions();
+    }
+
+    myOutput.innerHTML=afterTax;
+    myPayee.innerHTML=payee;
+    myNhif.innerHTML=nhif;
+    myDeductions.innerHTML=deduc;
+
+
+};
